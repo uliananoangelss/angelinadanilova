@@ -1,0 +1,1477 @@
+<html lang="en" vid="0"><head vid="1">
+    <meta charset="UTF-8" vid="2">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" vid="3">
+    <title vid="4">Angelina Danilova | Artist &amp; Wellness Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" vid="5">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" vid="6">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet" vid="7">
+    
+    <style vid="8">
+        :root {
+            
+            --bg-color: #EFEDE8; 
+            --text-primary: #7e8672; 
+            --text-secondary: #6B6862; 
+            --accent-terracotta: #768266; 
+            --accent-sage: #8A9A8C; 
+            
+            
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 32px;
+            --spacing-lg: 64px;
+            --spacing-xl: 120px;
+            --spacing-xxl: 200px; 
+            
+            
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Inter', sans-serif;
+            
+            --h1-size: 4.5rem;
+            --h2-size: 2.8rem;
+            --h3-size: 1.5rem;
+            --body-size: 1rem;
+            --caption-size: 0.75rem; 
+        }
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.5s ease;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .serif {
+            font-family: var(--font-serif);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            mix-blend-mode: difference;
+            color: #fff; 
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-item {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .nav-item:hover::after, .nav-item.active::after {
+            width: 100%;
+        }
+
+        
+        .page {
+            min-height: 100vh;
+            display: none;
+            padding-top: 100px;
+        }
+
+        .page.active {
+            display: block;
+            animation: pageFadeIn 0.8s ease forwards;
+        }
+
+        @keyframes pageFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        
+        .hero-section {
+             margin-top: 0;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            height: 90vh;
+            align-items: center;
+            position: relative;
+            padding: 0 5%;
+        }
+
+        .hero-text {
+            padding-right: 10%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tagline {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+            display: block;
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: var(--h1-size);
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+        }
+
+        .hero-bio {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 450px;
+            font-weight: 300;
+        }
+
+        .hero-image-wrapper {
+            height: 75vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            
+            transform: scale(1.05);
+            transition: transform 10s ease;
+        }
+
+        .hero-section:hover .hero-image {
+            transform: scale(1);
+        }
+
+        
+        .bio-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px; 
+            padding: var(--spacing-xl) 5%;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .bio-block {
+            padding: var(--spacing-md);
+            position: relative;
+        }
+
+        .bio-block::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 20px;
+            bottom: 20px;
+            width: 1px;
+            background: rgba(0,0,0,0.05);
+        }
+        .bio-block:first-child::before { display: none; }
+
+        .bio-block h3 {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-sm);
+            color: var(--accent-terracotta);
+        }
+
+        .bio-block p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        
+        .gallery-section {
+            padding: var(--spacing-xl) 0;
+            overflow: hidden;
+        }
+
+        .gallery-track {
+            display: flex;
+            gap: var(--spacing-md);
+            padding: 0 5%;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 20px; 
+            -ms-overflow-style: none;  
+            scrollbar-width: none;  
+        }
+
+        .gallery-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        
+        .gallery-item {
+            min-width: 400px;
+            max-width: 400px;
+            scroll-snap-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 520px; 
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: filter 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            filter: grayscale(0%);
+        }
+
+        .gallery-item figcaption {
+            margin-top: 15px;
+            font-size: 0.7rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            line-height: 1.4;
+        }
+
+        .gallery-item strong {
+            font-family: var(--font-serif);
+            font-weight: 400;
+            font-size: 1.5rem;
+            text-transform: none;
+            color: var(--text-primary);
+        }
+
+
+.retreat-hero {
+    position: relative;
+    height: 88vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+
+    background-image: url("Chateau_facade_fixed.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.retreat-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+background: linear-gradient(
+  to bottom,
+  #EFEDE8 0%,
+  rgba(239,237,232,0.85) 15%,
+  rgba(239,237,232,0.4) 35%,
+  rgba(239,237,232,0) 60%
+);
+    z-index: 1;
+}
+
+
+.retreat-title {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    transform: translateY(-15vh);
+    width: min(1100px, 90%);
+}
+
+.retreat-title h1 {
+    font-family: var(--font-serif);
+    font-size: 3.8rem;
+    font-weight: 300;
+}
+
+.retreat-title p {
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+/* ===== CTA blurred background ===== */
+
+.cta-section {
+  position: relative;
+  overflow: hidden;
+  background: none; /* убираем текущий фон если есть */
+}
+
+.cta-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("Art.jpeg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  transform: scale(1.15); /* компенсирует blur */
+  z-index: 0;
+}
+
+.cta-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(234, 232, 227, 0.9); /* мягкий светлый слой */
+  z-index: 1;
+}
+
+.cta-section h2 {
+  color: #808677;
+}
+
+.cta-section .btn-elegant {
+  border-color: #808677;
+  color: #808677;
+  background: transparent;
+}
+
+.cta-section > * {
+  position: relative;
+  z-index: 2;
+} 
+
+        .itinerary-section {
+            padding: 0 5%;
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .section-header {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: var(--spacing-lg);
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding-bottom: var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid rgba(166, 110, 78, 0.3); 
+            margin-left: 20px;
+        }
+
+        .day-node {
+            padding-left: 40px;
+            padding-bottom: var(--spacing-lg);
+            position: relative;
+        }
+
+        .day-node::before {
+            content: '';
+            position: absolute;
+            left: -3px;
+            top: 6px;
+            width: 5px;
+            height: 5px;
+            background: var(--accent-terracotta);
+            border-radius: 50%;
+        }
+
+        .day-label {
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--accent-terracotta);
+            margin-bottom: 8px;
+            letter-spacing: 0.05em;
+        }
+
+        .day-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .day-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            max-width: 600px;
+        }
+
+        
+        .take-home-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-lg);
+            padding: 0 5%;
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .take-home-item {
+            background: #F8F7F4;
+            padding: var(--spacing-lg);
+            transition: transform 0.3s ease;
+        }
+        
+        .take-home-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .take-home-icon {
+            font-size: 1.5rem;
+            color: var(--accent-terracotta);
+            margin-bottom: var(--spacing-sm);
+            font-family: var(--font-serif);
+            font-style: italic;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: var(--spacing-xxl) 0;
+            background: #E8E6E0;
+        }
+
+        .btn-elegant {
+            display: inline-block;
+            padding: 16px 40px;
+            border: 1px solid var(--text-primary);
+            color: var(--text-primary);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            background: rgba(255,255,255,0.25);  
+            backdrop-filter: blur(14px);         
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .btn-elegant:hover {
+            background: var(--text-primary);
+            color: #fff;
+        }
+
+        
+footer {
+    padding: var(--spacing-xl) 5%;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: end;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+        
+        .footer-col h4 {
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-form input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+            padding: 10px 0;
+            width: 100%;
+            max-width: 300px;
+            font-family: var(--font-sans);
+            outline: none;
+        }
+        
+        .btn-elegant {
+    margin-top: 24px;
+        }
+        .footer-form button {
+            background: transparent;
+            border: none;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            margin-top: 10px;
+            color: var(--accent-terracotta);
+        }
+
+
+        .carousel-track {
+            display: flex;
+            gap: var(--spacing-md);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 0 5% 16px 5%;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .carousel-track::-webkit-scrollbar { display: none; }
+
+        .carousel-card {
+            scroll-snap-align: center;
+            min-width: 520px;
+            max-width: 520px;
+        }
+
+        .carousel-card img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border: 1px solid rgba(0,0,0,0.08);
+            background: #fff;
+        }
+
+        .carousel-card figcaption {
+            margin-top: 10px;
+            font-size: 0.75rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .carousel-card {
+                min-width: 82vw;
+                max-width: 82vw;
+            }
+            .carousel-card img {
+                height: 46vw;
+                min-height: 220px;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .hero-section {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                height: auto;
+                padding-top: 80px;
+                gap: var(--spacing-lg);
+            }
+
+            .hero-image-wrapper {
+                width: 100%;
+                height: auto;
+                overflow: visible;
+            }
+
+            .hero-image {
+                width: 100%;
+                height: auto;
+                max-height: 70vh;
+                object-fit: contain;
+                transform: none;
+            }
+
+            .hero-section:hover .hero-image {
+                transform: none;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: var(--spacing-lg);
+            }
+            
+            .hero-image-wrapper {
+                height: 70vh;
+            }
+            
+            h1 { font-size: 2.5rem; }
+            
+            .bio-grid {
+                grid-template-columns: 1fr;
+                border-top: none;
+            }
+            
+            .bio-block::before { display: none; }
+            .bio-block { border-bottom: 1px solid rgba(0,0,0,0.05); padding-left: 0; }
+            
+            .take-home-grid { grid-template-columns: 1fr; }
+            
+            footer { grid-template-columns: 1fr; gap: 40px; }
+        }
+    
+
+
+        .retreat-carousel .section-header {
+            border-bottom: none; 
+            padding-bottom: 0;
+            margin-bottom: var(--spacing-md);
+        }
+
+
+        .retreat-carousel .carousel-track {
+            padding-left: 5%;
+            padding-right: 0; 
+        }
+
+        .retreat-carousel .carousel-card {
+            min-width: 560px;
+            max-width: 560px;
+        }
+
+
+
+        
+
+
+
+        /* =========================
+   responsive tuning (non-desktop only)
+   desktop styles remain untouched
+   ========================= */
+
+/* tablet / small laptop */
+@media (max-width: 1024px) {
+    nav {
+        padding: 22px 24px;
+    }
+    .nav-links {
+        gap: 22px;
+    }
+
+    :root {
+        --h1-size: 3.2rem;
+        --h2-size: 2.4rem;
+    }
+
+    .page {
+        padding-top: 92px; /* slightly less than desktop */
+    }
+
+    .hero-section {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        min-height: 0;
+        padding: 60px 5% 0;
+        gap: var(--spacing-lg);
+    }
+
+    .hero-text {
+        padding-right: 0;
+    }
+
+    h1 {
+        font-size: clamp(2.6rem, 4.6vw, 3.6rem);
+    }
+
+    .hero-bio {
+        max-width: 560px;
+    }
+
+    .hero-image-wrapper {
+        width: 100%;
+        height: auto;
+        overflow: visible;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: auto;
+        max-height: 78vh;
+        object-fit: contain;
+        transform: none;
+    }
+
+    .hero-section:hover .hero-image {
+        transform: none;
+    }
+
+    .bio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: var(--spacing-lg) 5%;
+    }
+
+    .gallery-item {
+        min-width: 72vw;
+        max-width: 72vw;
+    }
+
+    .gallery-item img {
+        height: min(62vh, 560px);
+    }
+
+    .carousel-card {
+        min-width: 72vw;
+        max-width: 72vw;
+    }
+
+    .carousel-card img {
+        height: max(260px, 44vw);
+    }
+
+    .retreat-title {
+        transform: translateY(-10vh);
+        width: min(980px, 92%);
+    }
+
+    .retreat-title h1 {
+        font-size: clamp(2.4rem, 4.8vw, 3.2rem);
+    }
+}
+
+
+@media (max-width: 600px) {
+    nav {
+        padding: 16px 16px;
+        mix-blend-mode: normal; /* improves readability on light backgrounds */
+        color: var(--text-primary);
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-item {
+        font-size: 0.7rem;
+        letter-spacing: 0.08em;
+    }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .page {
+        padding-top: 88px;
+    }
+
+    .hero-section {
+        padding: 56px 6% 0;
+    }
+
+    .tagline {
+        margin-bottom: var(--spacing-sm);
+    }
+
+    h1 {
+        font-size: clamp(2.05rem, 9vw, 2.7rem);
+        line-height: 1.08;
+    }
+
+    .hero-bio {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+
+    .hero-image-wrapper {
+        height: 60vh;
+        min-height: 380px;
+    }
+
+    .hero-image {
+        object-fit: cover; /* fills cleanly on small screens */
+        transform: none;
+    }
+
+    .bio-grid {
+        padding: var(--spacing-lg) 6%;
+    }
+
+    .gallery-section {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .gallery-track {
+        padding: 0 6%;
+        gap: var(--spacing-sm);
+    }
+
+    .gallery-item {
+        min-width: 84vw;
+        max-width: 84vw;
+    }
+
+    .gallery-item img {
+        height: 64vh;
+        min-height: 420px;
+    }
+
+    .itinerary-section,
+    .take-home-grid {
+        padding: 0 6%;
+    }
+
+    .retreat-hero {
+        height: 86vh;
+    }
+
+    .retreat-title {
+        transform: translateY(-8vh);
+        width: min(680px, 92%);
+    }
+
+    .retreat-title p {
+        font-size: 0.7rem;
+        letter-spacing: 0.16em;
+    }
+
+    .retreat-title h1 {
+        font-size: clamp(2.0rem, 8.6vw, 2.8rem);
+        line-height: 1.05;
+    }
+
+    .btn-elegant {
+        padding: 14px 28px;
+    }
+
+    .timeline {
+        margin-left: 12px;
+    }
+
+    .day-node {
+        padding-left: 26px;
+    }
+
+    footer {
+        padding-left: 6%;
+    }
+}
+
+
+@media (max-width: 380px) {
+    .nav-links { gap: 10px; }
+    .nav-item { font-size: 0.65rem; }
+    .hero-image-wrapper { min-height: 340px; }
+    .gallery-item img { min-height: 380px; }
+    .btn-elegant { padding: 12px 22px; }
+}
+
+@media (max-width: 1024px) {
+
+  .footer,
+  .footer-content {
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+
+  .footer-right,
+  .footer-links,
+  .footer-subscribe {
+    text-align: left !important;
+    align-items: flex-start !important;
+  }
+
+  .footer-form {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px;
+  }
+
+  .footer-form input {
+    width: 100% !important;
+  }
+
+  .footer-form button {
+    align-self: flex-start !important;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  footer {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  footer .footer-col {
+    text-align: left !important;
+  }
+
+  footer .footer-col:last-child {
+    margin-top: 32px;
+  }
+
+  .footer-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-form input {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .footer-form button {
+    margin-top: 16px;
+  }
+}
+
+/* ===== RETREAT HERO MOBILE — TITLE IN TOP LIGHT AREA (override) ===== */
+@media (max-width: 768px) {
+
+  .retreat-hero {
+    position: relative;
+    height: 86vh;
+    min-height: 640px;
+    display: block; /* disable flex centering for mobile */
+  }
+
+  /* use higher specificity so nothing overrides this */
+  .retreat-hero .retreat-title {
+    position: absolute;
+    top: 90px;                /* move this number to reposition whole block */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 90%;
+    z-index: 2;
+  }
+
+  .retreat-hero .retreat-title h1 {
+    line-height: 1.05;
+  }
+}
+
+.section-header h2 {
+  line-height: 1.1;   /* меньше — плотнее */
+   font-size: 1.8rem;
+}
+
+@media (max-width: 768px) {
+  .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+/* ===== custom spinning cursor ===== */
+
+@media (hover: hover) and (pointer: fine) {
+
+  body {
+    cursor: none;
+  }
+
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px;   /* размер картинки */
+    height: 60px;
+    pointer-events: none;
+    z-index: 9999;
+    background: url("crimp.png") center/contain no-repeat;
+    transform: translate(-50%, -50%);
+    animation: spin 4s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to   { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+}
+
+</style>
+</head>
+<body vid="9">
+
+    <nav vid="10">
+        <a href="#" class="logo" onclick="switchPage('home'); return false;" data-page="home-logo" vid="11">Angelina Danilova</a>
+        <div class="nav-links" vid="12">
+            <a class="nav-item active" onclick="switchPage('home'); return false;" data-page="home" vid="13">Profile</a>
+            <a class="nav-item" onclick="switchPage('retreat'); return false;" data-page="retreat" vid="14">Retreat</a>
+            <a class="nav-item" vid="15">Contact</a>
+        </div>
+    </nav>
+
+    
+    <div id="home" class="page active" vid="16">
+        
+        <section class="hero-section" vid="17">
+            <div class="hero-text fade-in" vid="18">
+                <span class="tagline" vid="19">Creative Practice | Sensory Presence</span>
+                <h1 vid="20">Art, Scent &amp;<br vid="21">Embodied Ritual</h1>
+                <p class="hero-bio" vid="22">
+                    Angelina Danilova is a multidisciplinary artist and wellness guide based in Seoul. 
+                    Her work merges nature, art, and scent to create spaces for reflection, softness, and reconnection.
+                </p>
+            </div>
+            <div class="hero-image-wrapper fade-in" vid="23">
+                
+                <img src="ANGELINA_PFP.jpeg" alt="Angelina Danilova Portrait" class="hero-image" vid="24">
+            </div>
+        </section>
+
+        <section class="container fade-in" vid="25">
+            <div class="bio-grid" vid="26">
+                <div class="bio-block" vid="27">
+                    <h3 vid="28">Performance</h3>
+                    <p vid="29">Roots in television and music, evolving into a practice of presence and stillness.</p>
+                </div>
+                <div class="bio-block" vid="30">
+                    <h3 vid="31">Sensory Art</h3>
+                    <p vid="32">Intuitive painting and scent design exploring the textures of memory and nature.</p>
+                </div>
+                <div class="bio-block" vid="33">
+                    <h3 vid="34">Breathwork</h3>
+                    <p vid="35">Guided yoga and somatic practices designed to ground the nervous system.</p>
+                </div>
+                <div class="bio-block" vid="36">
+                    <h3 vid="37">Immersion</h3>
+                    <p vid="38">Curated rituals in nature, fostering deep feminine connection and quietude.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section fade-in" vid="39">
+         <div class="gallery-track">
+    
+    <figure class="gallery-item">
+        <img src="Babel_250.jpeg" alt="Babel_250">
+        <figcaption>
+            <strong>The Journey</strong><br>
+            Having lived in Korea for nearly a decade, Angelina has also built a public career as a TV personality, actress, singer, and dancer
+        </figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+        <img src="Modeling.jpeg" alt="Modeling">
+        <figcaption>
+            <strong>Modeling</strong><br>
+            Moving between visibility and stillness has deeply shaped her sensitivity to balance, slowness, and care in a fast-moving world
+        </figcaption>
+    </figure>
+
+    <figure class="gallery-item">
+        <img src="Practice.jpeg" alt="Practice">
+        <figcaption>
+        <strong>Practice</strong><br>
+            Angelina Danilova is a multidisciplinary artist, wellness guide, and certified olfactory designer whose work bridges nature, art, and embodied presence
+        </figcaption>
+    </figure> 
+
+    <figure class="gallery-item">
+        <img src="Angelina_snap.jpeg" alt="Snap">
+        <figcaption>
+            <strong>Green Spiral</strong><br>
+            Through Green Spiral, she creates retreats as intimate, sensory experiences guided by intuition, nature, and reverence for life’s natural rhythms
+        </figcaption>
+    </figure>
+
+</div>
+        </section>
+
+    </div>
+
+    
+    <div id="retreat" class="page" vid="51">
+        
+       
+        <header class="retreat-hero fade-in" vid="52">
+            <div class="retreat-title" vid="55">
+                <p vid="56">June 1 — 7, 2026</p>
+                <h1 vid="57">Chateau de Balsac<br vid="58">Green Spiral Wellness Retreat</h1>
+                <p vid="59">France</p>
+               <a href="https://www.chateaubalsac.com/wellness-retreat/registrationpage" 
+   class="btn-elegant"
+   target="_blank"
+   rel="noopener">
+   Apply for Retreat
+</a>
+            </div>
+</header>
+
+<section class="container fade-in" style="margin-bottom: var(--spacing-xl);" vid="60">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;" vid="61">
+                <p class="serif" style="font-size: 2rem; color: var(--text-primary); margin-top: var(--spacing-md);margin-bottom: var(--spacing-md);" vid="62">
+                    An intimate, all-inclusive experience rooted in art, scent, nature, and embodied presence.
+                </p>    
+                <p style="color: var(--text-secondary);" vid="63">
+                    Limited to five women. Join Angelina for curated meals, watercolor sessions, aromatherapy workshops, and peaceful walks through the French countryside.
+                </p>
+            </div>
+        </section>
+
+<section class="container retreat-carousel fade-in" style="margin-bottom: 100px;">
+            <div class="section-header">
+                <h2>Chateau de Balsac Suites</h2>
+                <span style="font-size: 0.8rem; text-transform: uppercase;">Swipe</span>
+            </div>
+
+            <div class="carousel-track" aria-label="Retreat photo carousel">
+                <figure class="carousel-card">
+                    <img src="Renaissane_Suite.jpg" alt="Renaissane Suite">
+                    <figcaption>Renaissane Suite</figcaption>
+                </figure>
+
+                <figure class="carousel-card">
+                    <img src="Tower_Suite.jpg" alt="Tower Suite">
+                    <figcaption>Tower Suite</figcaption>
+                </figure>
+
+                <figure class="carousel-card">
+                    <img src="Tapestry_Room.jpg" alt="Tapestry Room">
+                    <figcaption>Taperstry Room</figcaption>
+                </figure>
+
+                <figure class="carousel-card">
+                    <img src="Ogive_Room.JPG" alt="Ogive Room">
+                    <figcaption>Ogive Room</figcaption>
+                </figure>
+
+                   <figure class="carousel-card">
+                    <img src="Hearth_Room.jpg" alt="Hearth Room">
+                    <figcaption>Hearth Room</figcaption>
+                </figure>
+
+                <figure class="carousel-card">
+                    <img src="Gothic_Room.jpg" alt="Gothic Room">
+                    <figcaption>Gothic Room</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="container itinerary-section fade-in" vid="64">
+            <div class="section-header" vid="65">
+
+
+
+                <h2 vid="66">The Journey</h2>
+                <span style="font-size: 0.8rem; text-transform: uppercase;" vid="67">7 Days</span>
+            </div>
+            
+            <div class="timeline" vid="68">
+                <div class="day-node" vid="69">
+                    <div class="day-label" vid="70">Day 1</div>
+                    <div class="day-title" vid="71">Arrival &amp; Grounding</div>
+                    <div class="day-desc" vid="72">Settle into the chateau. Light lunch followed by an opening circle and a gentle, grounding dinner.</div>
+                </div>
+                <div class="day-node" vid="73">
+                    <div class="day-label" vid="74">Day 2</div>
+                    <div class="day-title" vid="75">Scent &amp; Sound</div>
+                    <div class="day-desc" vid="76">Morning yoga, intuitive drawing session, aromatherapy blending workshop, evening sound meditation.</div>
+                </div>
+                <div class="day-node" vid="77">
+                    <div class="day-label" vid="78">Day 3</div>
+                    <div class="day-title" vid="79">Market &amp; Distillery</div>
+                    <div class="day-desc" vid="80">Excursion to the local farmers market. Lunch in the village. Visit to a lavender distillery.</div>
+                </div>
+                <div class="day-node" vid="81">
+                    <div class="day-label" vid="82">Day 4</div>
+                    <div class="day-title" vid="83">Water &amp; Flow</div>
+                    <div class="day-desc" vid="84">Waterfall meditation hike. Plein-air drawing session. Open personal time for reflection.</div>
+                </div>
+                <div class="day-node" vid="85">
+                    <div class="day-label" vid="86">Day 5</div>
+                    <div class="day-title" vid="87">Culture &amp; Creation</div>
+                    <div class="day-desc" vid="88">Village architecture tour, sketching session, local dinner with wine pairing.</div>
+                </div>
+                <div class="day-node" vid="89">
+                    <div class="day-label" vid="90">Day 6</div>
+                    <div class="day-title" vid="91">Herbs, Cooking &amp; Fire</div>
+                    <div class="day-desc" vid="92">Wild plant foraging walk. Cooking class lunch. Evening bonfire ceremony.</div>
+                </div>
+                <div class="day-node" vid="93">
+                    <div class="day-label" vid="94">Day 7</div>
+                    <div class="day-title" vid="95">Integration</div>
+                    <div class="day-desc" vid="96">Closing circle, exchange of journals, farewell brunch and departure.</div>
+                </div>
+            </div>
+        
+        
+
+</section>
+
+<section class="container retreat-carousel fade-in" style="margin-bottom: 100px;">
+            <div class="section-header">
+                <h2>The Experience</h2>
+                <span style="font-size: 0.8rem; text-transform: uppercase;">Swipe</span>
+            </div>
+
+            <div class="carousel-track" aria-label="Retreat photo carousel">
+                <figure class="carousel-card">
+                    <img src="Angelina_Ceremony.jpg" alt="Angelina at Tea Ceremony">
+                    <figcaption>Hands-on aromatherapy workshops allow each participant to create three personalized scent blends, thoughtfully designed to support their individual emotional and physical needs</figcaption>
+                </figure>
+
+                <figure class="carousel-card">
+                    <img src="Yoga.JPG" alt="Yoga">
+                    <figcaption>With over nine years of yoga practice, her approach emphasizes gentle movement, deep stretching, and nervous system regulation. For Angelina, yoga is a way of listening to the body rather than shaping it</figcaption>
+                </figure>
+
+                <figure class="carousel-card">
+                    <img src="Meditation.png" alt="Meditation">
+                    <figcaption>Find your balance, slowness, and care in the fast-moving world through meditation and creative practices</figcaption>
+                </figure>
+
+                <figure class="carousel-card">
+                    <img src="Outdoor_picnics.png" alt="Picnics">
+                    <figcaption>Daily art sessions ranging from still-life drawing to simple watercolor studies, invite you to reconnect with your natural creativity and quiet confidence, without pressure or performance</figcaption>
+                </figure>
+
+                   <figure class="carousel-card">
+                    <img src="Waterfall.png" alt="Waterfall">
+                    <figcaption>Nature itself becomes a teacher: waterfall sound meditations</figcaption>
+                </figure>
+
+                <figure class="carousel-card">
+                    <img src="Outdoor_walks.png" alt="Outdoor walks">
+                    <figcaption>The fragrance of spring, shifting light, textures, and colors invite a deeper relationship with the world through all five senses</figcaption>
+                </figure>
+
+                <figure class="carousel-card">
+                    <img src="Chateau_de_Balsac.png" alt="Chateau_de_Balsac">
+                    <figcaption>return home with practical tools for mindful living: grounding morning rituals, breathing techniques, new knowledge about medicinal herbs and plants, sensory awareness practices that support long-term emotional balance and clarity</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="container fade-in" style="margin-bottom: var(--spacing-xl);" vid="97">
+            <div class="section-header" vid="98">
+                <h2 vid="99">The Takeaway</h2>
+            </div>
+            <div class="take-home-grid" vid="100">
+                <div class="take-home-item" vid="101">
+                    <div class="take-home-icon" vid="102">I.</div>
+                    <h3 class="serif" vid="103">Scent</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;" vid="104">Personal aromatherapy blends created intuitively during our workshops.</p>
+                </div>
+                <div class="take-home-item" vid="105">
+                    <div class="take-home-icon" vid="106">II.</div>
+                    <h3 class="serif" vid="107">Art</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;" vid="108">Original watercolors and sketches documenting your internal and external landscape.</p>
+                </div>
+                <div class="take-home-item" vid="109">
+                    <div class="take-home-icon" vid="110">III.</div>
+                    <h3 class="serif" vid="111">Reflection</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;" vid="112">A guided journal filled with insights, poetry, and observations.</p>
+                </div>
+                <div class="take-home-item" vid="113">
+                    <div class="take-home-icon" vid="114">IV.</div>
+                    <h3 class="serif" vid="115">Practice</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;" vid="116">Embodied tools and breathwork techniques for daily life integration.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-section fade-in" vid="117">
+            <h2 class="serif" style="margin-bottom: var(--spacing-md); font-size: 2.5rem;" vid="118">Reconnect with your essence.</h2>
+            <a href="https://www.chateaubalsac.com/wellness-retreat/registrationpage" 
+   class="btn-elegant"
+   target="_blank"
+   rel="noopener">
+   Apply for Retreat
+</a>
+        </div>
+
+    </div>
+
+    <footer vid="120">
+  <div class="footer-col" vid="121">
+    <h4 vid="122">Stay Connected</h4>
+
+    <form class="footer-form" id="email-form">
+      <input
+        type="email"
+        name="email"
+        placeholder="Email Address"
+        required
+      >
+      <button type="submit">Subscribe</button>
+    </form>
+
+    <p id="form-message" style="margin-top:10px; font-size:0.75rem;"></p>
+  </div>
+
+  <div class="footer-col" style="text-align: right;">
+    <p>
+      <a href="https://www.instagram.com/angelinadanilova/"
+         target="_blank"
+         rel="noopener">
+        Instagram
+      </a>
+    </p>
+
+    <p>
+      <a href="mailto:intouchangelina@gmail.com">Contact</a>
+    </p>
+
+    <br>
+
+    <p>Seoul, South Korea</p>
+    <p>© 2026 Angelina Danilova</p>
+  </div>
+</footer>
+
+    <script vid="131">
+        
+        
+        function switchPage(pageId) {
+            
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            
+            const nextPage = document.getElementById(pageId);
+            nextPage.classList.add('active');
+
+           
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.toggle('active', item.getAttribute('data-page') === pageId);
+            });
+
+            
+            nextPage.querySelectorAll('.fade-in').forEach(el => {
+                el.classList.remove('visible');
+                observer.observe(el);
+            });
+
+            
+            if (pageId === 'retreat') {
+                const hero = nextPage.querySelector('.retreat-hero');
+                if (hero) {
+                    hero.classList.remove('is-ready');
+                    
+                    requestAnimationFrame(() => {
+                        
+                        hero.classList.add('is-ready');
+                    });
+                }
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const activeRetreat = document.querySelector('#retreat.page.active .retreat-hero');
+            if (activeRetreat) activeRetreat.classList.add('is-ready');
+        });
+const form = document.getElementById("email-form");
+const message = document.getElementById("form-message");
+
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const email = form.email.value.trim();
+
+  try {
+    await fetch("https://script.google.com/macros/s/AKfycbwJO__Bgmd6MvJEMYDHHWcHCi9xF56VW78qRWHY7TNtgQGVl76YQmYUl5DdJ32GhQ0fcQ/exec", {
+  method: "POST",
+  mode: "no-cors",
+  headers: { "Content-Type": "text/plain;charset=utf-8" },
+  body: JSON.stringify({ email }),
+});
+
+message.textContent = "Thank you. You're on the list.";
+form.reset();
+  } catch (err) {
+    message.textContent = "Something went wrong. Please try again.";
+  }
+});
+    </script>
+
+<div class="custom-cursor"></div>
+
+<script>
+const cursor = document.querySelector(".custom-cursor");
+
+window.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+</script>
+
+</body></html>
