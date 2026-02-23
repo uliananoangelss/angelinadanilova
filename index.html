@@ -1045,7 +1045,30 @@ footer {
     to   { transform: translate(-50%, -50%) rotate(360deg); }
   }
 }
+/* ===== RETREAT CAROUSEL — MOBILE FIX ===== */
+@media (max-width: 768px) {
+  .retreat-carousel .carousel-card {
+    min-width: 82vw;
+    max-width: 82vw;
+  }
 
+  .retreat-carousel .carousel-card img {
+    height: 46vw;
+    min-height: 220px;
+  }
+
+  .retreat-carousel .carousel-track {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+}
+
+@media (max-width: 600px) {
+  .retreat-carousel .carousel-card {
+    min-width: 88vw;
+    max-width: 88vw;
+  }
+}
 </style>
 </head>
 <body vid="9">
@@ -1055,7 +1078,7 @@ footer {
         <div class="nav-links" vid="12">
             <a class="nav-item active" onclick="switchPage('home'); return false;" data-page="home" vid="13">Profile</a>
             <a class="nav-item" onclick="switchPage('retreat'); return false;" data-page="retreat" vid="14">Retreat</a>
-            <a class="nav-item" vid="15">Contact</a>
+            <a class="nav-item" href="mailto:intouchangelina@gmail.com">Contact</a>
         </div>
     </nav>
 
